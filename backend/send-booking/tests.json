@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Send booking",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "service": "Химчистка дивана",
+        "date": "2025-05-10",
+        "time": "11:00",
+        "name": "Тест",
+        "phone": "89001234567",
+        "comment": "Тестовая заявка",
+        "hasPhoto": false
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
